@@ -1,0 +1,271 @@
+[
+  {
+    "id": "sam-altman",
+    "name": "Sam Altman",
+    "avatar": "https://unavatar.io/twitter/sama",
+    "identity_tag": "OpenAI CEO",
+    "type": "person",
+    "bio": "OpenAI 首席执行官，Y Combinator 前总裁。推动 ChatGPT 走向大众视野，是当前 AI 商业化浪潮的核心推动者。",
+    "activity_tags": ["🔥 高频更新 周更3+", "💰 商业与战略"],
+    "influence": {"twitter_followers": "3.5M", "media_mentions": "极高"},
+    "recent_highlights": [
+      "Sam Altman 宣布 OpenAI 下一代模型将大幅降低 API 价格",
+      "在博客中分享了对 AGI 时间线的最新判断"
+    ],
+    "scrape_sources": [{"type": "twitter", "handle": "sama"}],
+    "category": "core_leaders"
+  },
+  {
+    "id": "andrej-karpathy",
+    "name": "Andrej Karpathy",
+    "avatar": "https://unavatar.io/twitter/karpathy",
+    "identity_tag": "前特斯拉AI总监",
+    "type": "person",
+    "bio": "计算机视觉与深度学习传奇人物，曾任特斯拉 AI 总监，OpenAI 联合创始成员。以深入浅出的技术科普闻名，YouTube 教学视频广受好评。",
+    "activity_tags": ["🔥 高频更新 周更5+", "🧠 硬核技术"],
+    "influence": {"twitter_followers": "1.2M", "github_stars": "48k", "youtube_subscribers": "500k+"},
+    "recent_highlights": [
+      "Karpathy 发布新视频深度讲解 LLM 训练全流程",
+      "开源 minbpe 项目获得社区广泛关注"
+    ],
+    "scrape_sources": [{"type": "twitter", "handle": "karpathy"}],
+    "category": "core_leaders"
+  },
+  {
+    "id": "yann-lecun",
+    "name": "Yann LeCun",
+    "avatar": "https://unavatar.io/twitter/ylecun",
+    "identity_tag": "Meta首席AI科学家 / 图灵奖得主",
+    "type": "person",
+    "bio": "卷积神经网络之父，2018 年图灵奖得主，现任 Meta 首席 AI 科学家。经常公开质疑 LLM 路线，倡导世界模型与自监督学习。",
+    "activity_tags": ["🔥 高频更新 日更", "🧠 硬核技术", "💬 观点犀利"],
+    "influence": {"twitter_followers": "800k", "citations": "200k+"},
+    "recent_highlights": [
+      "LeCun 再次公开批评自回归 LLM 路线的局限性",
+      "在 AAAI 大会上展示 Meta 世界模型最新研究进展"
+    ],
+    "scrape_sources": [{"type": "twitter", "handle": "ylecun"}],
+    "category": "core_leaders"
+  },
+  {
+    "id": "demis-hassabis",
+    "name": "Demis Hassabis",
+    "avatar": "https://unavatar.io/twitter/demaborschel",
+    "identity_tag": "Google DeepMind CEO / 诺贝尔化学奖得主",
+    "type": "person",
+    "bio": "Google DeepMind 联合创始人兼 CEO，2024 年诺贝尔化学奖得主。领导团队开发了 AlphaGo、AlphaFold 等里程碑式 AI 系统。",
+    "activity_tags": ["📡 中频更新 周更1-2", "🔬 前沿科研"],
+    "influence": {"twitter_followers": "250k", "nature_papers": "20+"},
+    "recent_highlights": [
+      "Hassabis 透露 Gemini 下一代模型将具备更强的推理能力",
+      "DeepMind 发布 AlphaFold 3 开放全部蛋白质结构预测"
+    ],
+    "scrape_sources": [{"type": "twitter", "handle": "demaborschel"}],
+    "category": "core_leaders"
+  },
+  {
+    "id": "jim-fan",
+    "name": "Jim Fan",
+    "avatar": "https://unavatar.io/twitter/DrJimFan",
+    "identity_tag": "NVIDIA高级研究科学家",
+    "type": "person",
+    "bio": "NVIDIA 高级研究科学家，专注于通用具身智能与基础代理。以高质量技术线程和前沿解读在 AI 社区广受关注。",
+    "activity_tags": ["🔥 高频更新 周更3+", "🧠 硬核技术", "🤖 具身智能"],
+    "influence": {"twitter_followers": "600k", "github_stars": "15k"},
+    "recent_highlights": [
+      "Jim Fan 发布关于通用机器人基础模型的深度技术分析",
+      "分享 NVIDIA GR00T 具身智能项目最新进展"
+    ],
+    "scrape_sources": [{"type": "twitter", "handle": "DrJimFan"}],
+    "category": "core_leaders"
+  },
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "avatar": "https://unavatar.io/twitter/OpenAI",
+    "identity_tag": "全球领先AI实验室",
+    "type": "org",
+    "bio": "全球最具影响力的 AI 研究实验室之一，ChatGPT、GPT-4、DALL·E、Sora 的缔造者。引领了大语言模型的商业化浪潮。",
+    "activity_tags": ["🔥 高频更新 日更", "🚀 产品发布", "📄 研究论文"],
+    "influence": {"twitter_followers": "5M+", "chatgpt_users": "200M+"},
+    "recent_highlights": [
+      "OpenAI 发布 GPT-5 系列模型，推理能力大幅提升",
+      "Sora 视频生成模型正式面向开发者开放 API"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "OpenAI"},
+      {"type": "rss", "url": "https://openai.com/blog/rss.xml"}
+    ],
+    "category": "top_brands"
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "avatar": "https://unavatar.io/twitter/AnthropicAI",
+    "identity_tag": "AI安全领军企业",
+    "type": "org",
+    "bio": "由前 OpenAI 核心成员创立的 AI 安全公司，Claude 系列模型的开发者。以负责任的 AI 开发理念和宪法 AI 方法论著称。",
+    "activity_tags": ["📡 中频更新 周更2-3", "🛡️ AI安全", "📄 研究论文"],
+    "influence": {"twitter_followers": "500k", "valuation": "$60B+"},
+    "recent_highlights": [
+      "Anthropic 发布 Claude 4 系列，在复杂推理任务上表现卓越",
+      "发表最新 AI 安全研究论文，提出可解释性新方法"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "AnthropicAI"},
+      {"type": "rss", "url": "https://www.anthropic.com/feed"}
+    ],
+    "category": "top_brands"
+  },
+  {
+    "id": "google-deepmind",
+    "name": "Google DeepMind",
+    "avatar": "https://unavatar.io/twitter/GoogleDeepMind",
+    "identity_tag": "谷歌旗下顶级AI研究机构",
+    "type": "org",
+    "bio": "由 Google Brain 与 DeepMind 合并而成，是全球规模最大的 AI 研究机构之一。Gemini、AlphaFold、Veo 等明星项目的诞生地。",
+    "activity_tags": ["🔥 高频更新 周更3+", "🔬 前沿科研", "🚀 产品发布"],
+    "influence": {"twitter_followers": "1.5M", "nature_science_papers": "100+"},
+    "recent_highlights": [
+      "Google DeepMind 发布 Gemini 2.5 Pro，刷新多项基准测试",
+      "AlphaGeometry 2 在国际数学奥赛级别问题上取得突破"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "GoogleDeepMind"},
+      {"type": "rss", "url": "https://deepmind.google/blog/rss.xml"}
+    ],
+    "category": "top_brands"
+  },
+  {
+    "id": "meta-ai",
+    "name": "Meta AI",
+    "avatar": "https://unavatar.io/twitter/MetaAI",
+    "identity_tag": "Meta旗下AI研究部门",
+    "type": "org",
+    "bio": "Meta 旗下 AI 研究部门，Llama 开源大模型系列的发布者。在开源 AI 生态中扮演关键角色，推动了开源大模型的快速发展。",
+    "activity_tags": ["📡 中频更新 周更2-3", "🔓 开源模型", "📄 研究论文"],
+    "influence": {"twitter_followers": "1M+", "llama_downloads": "500M+"},
+    "recent_highlights": [
+      "Meta 发布 Llama 4 系列开源模型，性能逼近闭源前沿",
+      "开源 Segment Anything 2 模型，支持视频实时分割"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "MetaAI"},
+      {"type": "rss", "url": "https://ai.meta.com/blog/rss/"}
+    ],
+    "category": "top_brands"
+  },
+  {
+    "id": "huggingface",
+    "name": "Hugging Face",
+    "avatar": "https://unavatar.io/twitter/huggingface",
+    "identity_tag": "AI开源社区平台",
+    "type": "opensource",
+    "bio": "全球最大的 AI 模型与数据集开源社区，被誉为"AI 界的 GitHub"。Transformers 库是 NLP/CV 领域最流行的开源工具之一。",
+    "activity_tags": ["🔥 高频更新 日更", "🔓 开源生态", "🛠️ 工具与平台"],
+    "influence": {"twitter_followers": "800k", "models_hosted": "1M+", "github_stars": "140k"},
+    "recent_highlights": [
+      "Hugging Face 推出 SmolLM 系列轻量级模型，适配端侧部署",
+      "Open LLM Leaderboard 更新评测标准，引入更多推理任务"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "huggingface"},
+      {"type": "rss", "url": "https://huggingface.co/blog/feed.xml"}
+    ],
+    "category": "opensource_geeks"
+  },
+  {
+    "id": "langchain",
+    "name": "LangChain",
+    "avatar": "https://unavatar.io/twitter/LangChainAI",
+    "identity_tag": "LLM应用开发框架",
+    "type": "opensource",
+    "bio": "最流行的大语言模型应用开发框架，提供链式调用、RAG、Agent 等核心能力。LangGraph 和 LangSmith 进一步扩展了其生态版图。",
+    "activity_tags": ["🔥 高频更新 周更5+", "🛠️ 工具与框架", "🤖 AI Agent"],
+    "influence": {"twitter_followers": "200k", "github_stars": "100k+", "npm_downloads": "2M+/月"},
+    "recent_highlights": [
+      "LangGraph 发布新版本，支持更复杂的多 Agent 工作流",
+      "LangChain 与主流云厂商合作推出企业级 RAG 部署方案"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "LangChainAI"},
+      {"type": "rss", "url": "https://blog.langchain.dev/rss/"}
+    ],
+    "category": "opensource_geeks"
+  },
+  {
+    "id": "ollama",
+    "name": "Ollama",
+    "avatar": "https://unavatar.io/twitter/ollaborhq",
+    "identity_tag": "本地大模型运行工具",
+    "type": "opensource",
+    "bio": "最受欢迎的本地大模型运行工具，让用户一行命令即可在个人电脑上运行 Llama、Mistral、Gemma 等开源模型。极大降低了 AI 的使用门槛。",
+    "activity_tags": ["📡 中频更新 周更1-2", "🛠️ 工具与平台", "🔓 开源"],
+    "influence": {"github_stars": "120k+", "docker_pulls": "50M+"},
+    "recent_highlights": [
+      "Ollama 新增对 Llama 4 和 Gemma 3 系列模型的支持",
+      "发布性能优化更新，推理速度提升 30%"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "ollaborhq"},
+      {"type": "rss", "url": "https://ollama.com/blog/rss"}
+    ],
+    "category": "opensource_geeks"
+  },
+  {
+    "id": "hacker-news-ai",
+    "name": "Hacker News AI",
+    "avatar": "https://unavatar.io/twitter/HackerNewsAI",
+    "identity_tag": "HN社区AI热点聚合",
+    "type": "media",
+    "bio": "追踪 Hacker News 上最受关注的 AI 相关讨论与项目。作为技术社区的风向标，HN 上的 AI 话题往往能反映行业最前沿的技术趋势。",
+    "activity_tags": ["🔥 高频更新 日更", "📰 新闻聚合", "💬 社区讨论"],
+    "influence": {"daily_ai_posts": "50+", "community_size": "10M+"},
+    "recent_highlights": [
+      "HN 热议：开源模型是否已经追平闭源模型？",
+      "一篇关于 AI 编程助手实际生产力提升的深度讨论登上首页"
+    ],
+    "scrape_sources": [
+      {"type": "rss", "url": "https://hnrss.org/newest?q=AI+LLM+machine+learning"}
+    ],
+    "category": "industry_intel"
+  },
+  {
+    "id": "the-rundown-ai",
+    "name": "The Rundown AI",
+    "avatar": "https://unavatar.io/twitter/TheRundownAI",
+    "identity_tag": "AI新闻日报",
+    "type": "media",
+    "bio": "全球订阅量最大的 AI 新闻简报之一，每日精选 AI 领域最重要的新闻、产品发布和研究突破，以简洁易懂的方式呈现给读者。",
+    "activity_tags": ["🔥 高频更新 日更", "📰 新闻简报", "🎯 精选内容"],
+    "influence": {"twitter_followers": "700k", "newsletter_subscribers": "600k+"},
+    "recent_highlights": [
+      "The Rundown AI 深度解析本周最重要的五项 AI 突破",
+      "独家整理各大厂商 AI 模型性能对比表"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "TheRundownAI"},
+      {"type": "rss", "url": "https://www.therundown.ai/feed"}
+    ],
+    "category": "industry_intel"
+  },
+  {
+    "id": "bensbites",
+    "name": "Ben's Bites",
+    "avatar": "https://unavatar.io/twitter/benaborschel",
+    "identity_tag": "AI行业深度洞察",
+    "type": "media",
+    "bio": "由 Ben Tossell 创办的知名 AI 资讯平台，从最初的每日简报发展为涵盖新闻、工具推荐和行业分析的综合性 AI 媒体。",
+    "activity_tags": ["📡 中频更新 周更3-5", "📰 深度分析", "🛠️ 工具推荐"],
+    "influence": {"twitter_followers": "150k", "newsletter_subscribers": "300k+"},
+    "recent_highlights": [
+      "Ben's Bites 发布 2026 年 Q1 AI 行业趋势报告",
+      "深度分析 AI Agent 赛道的投资格局与创业机会"
+    ],
+    "scrape_sources": [
+      {"type": "twitter", "handle": "benaborschel"},
+      {"type": "rss", "url": "https://bensbites.beehiiv.com/feed"}
+    ],
+    "category": "industry_intel"
+  }
+]
