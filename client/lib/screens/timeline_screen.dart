@@ -15,6 +15,8 @@ final timelineProvider = FutureProvider<List<Post>>((ref) async {
 });
 
 final trendingProvider = FutureProvider<List<Post>>((ref) async {
+  final showTrending = ref.watch(trendingRecommendationProvider);
+  if (!showTrending) return [];
   final api = ref.read(apiClientProvider);
   return api.getTrending();
 });

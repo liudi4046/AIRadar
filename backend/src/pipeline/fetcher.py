@@ -13,7 +13,10 @@ async def fetch_entity_feed(
 ) -> list[dict]:
     """Fetch RSS feed for a single scrape source and return parsed items."""
     if source["type"] == "rss":
-        url = f"{rsshub_base_url}{source['path']}"
+        if "url" in source:
+            url = source["url"]
+        else:
+            url = f"{rsshub_base_url}{source['path']}"
     else:
         route_template = RSSHUB_ROUTE_MAP.get(source["type"])
         if not route_template:

@@ -42,3 +42,16 @@ async def test_fetch_entity_feed_rss_source(httpx_mock):
         source={"type": "rss", "path": "/custom/feed"},
     )
     assert len(items) == 1
+
+
+@pytest.mark.asyncio
+async def test_fetch_entity_feed_rss_direct_url(httpx_mock):
+    httpx_mock.add_response(url="https://openai.com/blog/rss.xml", text=MOCK_RSS_XML)
+
+    from src.pipeline.fetcher import fetch_entity_feed
+
+    items = await fetch_entity_feed(
+        rsshub_base_url="http://localhost:1200",
+        source={"type": "rss", "url": "https://openai.com/blog/rss.xml"},
+    )
+    assert len(items) == 1

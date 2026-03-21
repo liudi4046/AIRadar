@@ -5,6 +5,8 @@ final apiClientProvider = Provider<ApiClient>((ref) => ApiClient());
 
 final subscribedEntityIdsProvider = StateProvider<List<String>>((ref) {
   return [
-    'sam-altman', 'karpathy', 'openai', 'anthropic', 'huggingface',
+    'sam-altman', 'andrej-karpathy', 'openai', 'anthropic', 'huggingface',
   ];
 });
+
+final trendingRecommendationProvider = StateProvider<bool>((ref) => true);

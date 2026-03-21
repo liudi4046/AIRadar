@@ -4,8 +4,6 @@ import 'package:go_router/go_router.dart';
 
 import '../providers.dart';
 
-final trendingRecommendationProvider = StateProvider<bool>((ref) => true);
-
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
 
