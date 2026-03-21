@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .api.entities import router as entities_router
+from .api.posts import router as posts_router
 
 app = FastAPI(title="AI Radar API", version="0.1.0")
 
@@ -14,6 +15,7 @@ app.add_middleware(
 )
 
 app.include_router(entities_router)
+app.include_router(posts_router)
 
 
 @app.get("/health")
