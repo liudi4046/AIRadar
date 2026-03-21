@@ -1,4 +1,12 @@
 services:
+  api:
+    build: ../backend
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - ../backend/.env
+
   rsshub:
     image: diygod/rsshub:latest
     restart: always
