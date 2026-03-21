@@ -233,7 +233,6 @@
 
 ### 7.3 客户端
 - 跨平台 App（Flutter，iOS + Android）。
-- 或 MVP 阶段先做微信小程序验证。
 
 ---
 
@@ -276,5 +275,5 @@
 - **Tab 2**：简版发现页（分类 + 实体列表 + 简版名片）。
 - **详情页**：AI 洞察 + AI 详细解读 + 原文链接。全文翻译可暂缓。
 - **Tab 3**：简版个人中心（订阅管理）。付费功能可暂缓，先验证留存。
-- **后端**：Python 脚本 + RSSHub + DeepSeek API + Supabase/Firebase。
+- **后端**：Python 脚本 + RSSHub + Qwen3.5 API (阿里云百炼) + Supabase/Firebase。
 - **不做**：用户注册体系（匿名使用即可）、支付系统、复杂推荐算法。
