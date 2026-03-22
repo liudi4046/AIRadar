@@ -161,7 +161,7 @@
     "avatar": "https://unavatar.io/twitter/huggingface",
     "identity_tag": "AI开源社区平台",
     "type": "opensource",
-    "bio": "全球最大的 AI 模型与数据集开源社区，被誉为"AI 界的 GitHub"。Transformers 库是 NLP/CV 领域最流行的开源工具之一。",
+    "bio": "全球最大的 AI 模型与数据集开源社区，被誉为「AI 界的 GitHub」。Transformers 库是 NLP/CV 领域最流行的开源工具之一。",
     "activity_tags": ["🔥 高频更新 日更", "🔓 开源生态", "🛠️ 工具与平台"],
     "influence": {"twitter_followers": "800k", "models_hosted": "1M+", "github_stars": "140k"},
     "recent_highlights": [
