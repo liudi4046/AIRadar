@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import asyncio
+import logging
 from typing import TYPE_CHECKING
 
 import feedparser
@@ -8,15 +10,32 @@ import httpx
 if TYPE_CHECKING:
     from ..config import Settings
 
+logger = logging.getLogger(__name__)
+
+_TWITTER_MAX_RETRIES = 3
+_TWITTER_RETRY_BASE_DELAY = 2.0
+
 
 async def _fetch_twitter(settings: Settings, handle: str) -> list[dict]:
-    """Fetch latest tweets for a handle via TwitterAPI.io."""
+    """Fetch latest tweets for a handle via TwitterAPI.io with retry on 429."""
     url = f"{settings.twitter_api_base_url}/twitter/user/last_tweets"
     headers = {"X-API-Key": settings.twitter_api_key}
     params = {"userName": handle}
 
-    async with httpx.AsyncClient(timeout=30) as client:
-        resp = await client.get(url, headers=headers, params=params)
+    for attempt in range(_TWITTER_MAX_RETRIES):
+        async with httpx.AsyncClient(timeout=30) as client:
+            resp = await client.get(url, headers=headers, params=params)
+
+        if resp.status_code == 429:
+            delay = _TWITTER_RETRY_BASE_DELAY * (2 ** attempt)
+            logger.warning("Rate limited fetching @%s, retrying in %.1fs (attempt %d/%d)",
+                           handle, delay, attempt + 1, _TWITTER_MAX_RETRIES)
+            await asyncio.sleep(delay)
+            continue
+
+        resp.raise_for_status()
+        break
+    else:
         resp.raise_for_status()
 
     data = resp.json()
@@ -37,7 +56,7 @@ async def _fetch_twitter(settings: Settings, handle: str) -> list[dict]:
 
 async def _fetch_rss(url: str) -> list[dict]:
     """Fetch and parse an RSS/Atom feed by direct URL."""
-    async with httpx.AsyncClient(timeout=30) as client:
+    async with httpx.AsyncClient(timeout=30, follow_redirects=True) as client:
         resp = await client.get(url)
         resp.raise_for_status()
 

@@ -1,3 +1,4 @@
+import asyncio
 import hashlib
 import logging
 
@@ -77,12 +78,14 @@ async def run_pipeline() -> dict:
     entities = client.table("entities").select("*").execute().data
 
     stats = {"total_entities": len(entities), "new_posts": 0, "errors": 0}
-    for entity in entities:
+    for i, entity in enumerate(entities):
         try:
             count = await process_entity(entity, settings)
             stats["new_posts"] += count
         except Exception:
             logger.exception("Failed to process entity %s", entity["id"])
             stats["errors"] += 1
+        if i < len(entities) - 1:
+            await asyncio.sleep(1.0)
 
     return stats
