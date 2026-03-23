@@ -72,6 +72,24 @@ async def test_fetch_twitter(httpx_mock):
 
 
 @pytest.mark.asyncio
+async def test_fetch_twitter_null_tweets(httpx_mock):
+    """TwitterAPI.io may return status success with tweets: null (not [])."""
+    httpx_mock.add_response(
+        url="https://api.twitterapi.io/twitter/user/last_tweets?userName=ylecun",
+        json={"status": "success", "tweets": None, "message": "", "has_next_page": False},
+    )
+
+    from src.pipeline.fetcher import fetch_entity_feed
+
+    settings = _make_settings()
+    items = await fetch_entity_feed(
+        settings=settings,
+        source={"type": "twitter", "handle": "ylecun"},
+    )
+    assert items == []
+
+
+@pytest.mark.asyncio
 async def test_fetch_twitter_error_status(httpx_mock):
     httpx_mock.add_response(
         url="https://api.twitterapi.io/twitter/user/last_tweets?userName=nobody",

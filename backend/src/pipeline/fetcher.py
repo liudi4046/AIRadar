@@ -40,10 +40,26 @@ async def _fetch_twitter(settings: Settings, handle: str) -> list[dict]:
 
     data = resp.json()
     if data.get("status") != "success":
+        logger.warning(
+            "Twitter API non-success for @%s: status=%s message=%s",
+            handle,
+            data.get("status"),
+            (data.get("message") or "")[:300],
+        )
+        return []
+
+    # API may return "tweets": null; dict.get("tweets", []) still yields None if key exists.
+    tweets = data.get("tweets") or []
+    if not tweets:
+        logger.warning(
+            "Twitter API returned no tweets for @%s (message=%s)",
+            handle,
+            (data.get("message") or "")[:300],
+        )
         return []
 
     items = []
-    for tweet in data.get("tweets", []):
+    for tweet in tweets:
         text = tweet.get("text", "")
         items.append({
             "title": text[:80] if text else "",
