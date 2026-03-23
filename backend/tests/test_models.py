@@ -39,3 +39,4 @@ def test_post_model_creation():
     )
     assert post.entity_id == "karpathy"
     assert post.is_trending is False
+    assert not hasattr(post, "translation_zh")

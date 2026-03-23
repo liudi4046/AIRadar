@@ -360,7 +360,6 @@ class Post(BaseModel):
     summary_zh: str = ""
     insight_zh: str = ""
     interpretation_zh: str = ""
-    translation_zh: str = ""
     published_at: str = ""
     created_at: str = ""
     is_trending: bool = False
@@ -419,7 +418,6 @@ CREATE TABLE IF NOT EXISTS posts (
     summary_zh TEXT DEFAULT '',
     insight_zh TEXT DEFAULT '',
     interpretation_zh TEXT DEFAULT '',
-    translation_zh TEXT DEFAULT '',
     published_at TIMESTAMPTZ,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     is_trending BOOLEAN DEFAULT FALSE,
@@ -2203,7 +2201,7 @@ From top to bottom per design spec:
 3. **AI Detailed Interpretation** (`interpretation_zh`): main content area, rich text
 4. **Original link**: `🔗 查看原文链接` button at bottom, opens with `url_launcher`
 
-Note: Full translation (`translation_zh`) is omitted for MVP.
+Note: Full translation is omitted for MVP.
 
 **Step 2: Connect to API with Riverpod**
 

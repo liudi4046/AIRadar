@@ -42,7 +42,6 @@ class Post(BaseModel):
     summary_zh: str = ""
     insight_zh: str = ""
     interpretation_zh: str = ""
-    translation_zh: str = ""
     published_at: str = ""
     created_at: str = ""
     is_trending: bool = False

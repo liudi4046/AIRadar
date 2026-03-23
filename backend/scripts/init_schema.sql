@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS posts (
     summary_zh TEXT DEFAULT '',
     insight_zh TEXT DEFAULT '',
     interpretation_zh TEXT DEFAULT '',
-    translation_zh TEXT DEFAULT '',
     published_at TIMESTAMPTZ,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     is_trending BOOLEAN DEFAULT FALSE,
