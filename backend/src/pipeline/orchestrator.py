@@ -24,12 +24,12 @@ def post_exists(post_id: str) -> bool:
     return len(result.data) > 0
 
 
-async def process_entity(entity: dict, rsshub_base_url: str) -> int:
+async def process_entity(entity: dict, settings) -> int:
     """Process all scrape sources for one entity. Returns count of new posts saved."""
     saved = 0
     for source in entity.get("scrape_sources", []):
         try:
-            items = await fetch_entity_feed(rsshub_base_url, source)
+            items = await fetch_entity_feed(settings, source)
         except Exception:
             logger.exception("Failed to fetch feed for %s source %s", entity["id"], source)
             continue
@@ -79,7 +79,7 @@ async def run_pipeline() -> dict:
     stats = {"total_entities": len(entities), "new_posts": 0, "errors": 0}
     for entity in entities:
         try:
-            count = await process_entity(entity, settings.rsshub_base_url)
+            count = await process_entity(entity, settings)
             stats["new_posts"] += count
         except Exception:
             logger.exception("Failed to process entity %s", entity["id"])

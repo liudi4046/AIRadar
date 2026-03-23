@@ -2,6 +2,13 @@ import pytest
 from unittest.mock import AsyncMock, patch, MagicMock
 
 
+def _make_settings():
+    settings = MagicMock()
+    settings.twitter_api_key = "test-key"
+    settings.twitter_api_base_url = "https://api.twitterapi.io"
+    return settings
+
+
 @pytest.mark.asyncio
 async def test_process_single_entity():
     mock_items = [
@@ -34,7 +41,7 @@ async def test_process_single_entity():
             "bio": "A test entity",
             "scrape_sources": [{"type": "twitter", "handle": "test"}],
         }
-        count = await process_entity(entity, rsshub_base_url="http://localhost:1200")
+        count = await process_entity(entity, settings=_make_settings())
         assert count == 1
         mock_save.assert_called_once()
 
@@ -61,7 +68,7 @@ async def test_process_entity_filters_unsafe():
             "bio": "",
             "scrape_sources": [{"type": "twitter", "handle": "test"}],
         }
-        count = await process_entity(entity, rsshub_base_url="http://localhost:1200")
+        count = await process_entity(entity, settings=_make_settings())
         assert count == 0
         mock_gen.assert_not_called()
         mock_save.assert_not_called()

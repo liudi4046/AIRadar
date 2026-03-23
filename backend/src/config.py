@@ -11,7 +11,8 @@ class Settings(BaseSettings):
     qwen_base_url: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     qwen_moderation_model: str = "qwen3.5-flash"
     qwen_generation_model: str = "qwen3.5-plus"
-    rsshub_base_url: str = "http://localhost:1200"
+    twitter_api_key: str
+    twitter_api_base_url: str = "https://api.twitterapi.io"
     scrape_interval_hours: int = 2
 
     model_config = {"env_file": ".env", "extra": "ignore"}

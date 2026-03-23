@@ -1,28 +1,42 @@
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
 import feedparser
 import httpx
 
-RSSHUB_ROUTE_MAP = {
-    "twitter": "/twitter/user/{handle}",
-    "github_releases": "/github/release/{handle}",
-}
+if TYPE_CHECKING:
+    from ..config import Settings
 
 
-async def fetch_entity_feed(
-    rsshub_base_url: str,
-    source: dict,
-) -> list[dict]:
-    """Fetch RSS feed for a single scrape source and return parsed items."""
-    if source["type"] == "rss":
-        if "url" in source:
-            url = source["url"]
-        else:
-            url = f"{rsshub_base_url}{source['path']}"
-    else:
-        route_template = RSSHUB_ROUTE_MAP.get(source["type"])
-        if not route_template:
-            return []
-        url = rsshub_base_url + route_template.format(**source)
+async def _fetch_twitter(settings: Settings, handle: str) -> list[dict]:
+    """Fetch latest tweets for a handle via TwitterAPI.io."""
+    url = f"{settings.twitter_api_base_url}/twitter/user/last_tweets"
+    headers = {"X-API-Key": settings.twitter_api_key}
+    params = {"userName": handle}
 
+    async with httpx.AsyncClient(timeout=30) as client:
+        resp = await client.get(url, headers=headers, params=params)
+        resp.raise_for_status()
+
+    data = resp.json()
+    if data.get("status") != "success":
+        return []
+
+    items = []
+    for tweet in data.get("tweets", []):
+        text = tweet.get("text", "")
+        items.append({
+            "title": text[:80] if text else "",
+            "content": text,
+            "link": tweet.get("url", ""),
+            "published": tweet.get("createdAt", ""),
+        })
+    return items
+
+
+async def _fetch_rss(url: str) -> list[dict]:
+    """Fetch and parse an RSS/Atom feed by direct URL."""
     async with httpx.AsyncClient(timeout=30) as client:
         resp = await client.get(url)
         resp.raise_for_status()
@@ -37,3 +51,17 @@ async def fetch_entity_feed(
             "published": entry.get("published", ""),
         })
     return items
+
+
+async def fetch_entity_feed(settings: Settings, source: dict) -> list[dict]:
+    """Fetch feed items for a single scrape source.
+
+    Returns a list of dicts with keys: title, content, link, published.
+    """
+    if source["type"] == "twitter":
+        return await _fetch_twitter(settings, source["handle"])
+
+    if source["type"] == "rss":
+        return await _fetch_rss(source["url"])
+
+    return []
